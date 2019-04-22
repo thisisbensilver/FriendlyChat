@@ -21,6 +21,8 @@ public class FriendlyMessage {
     private String name;
     private String photoUrl;
 
+    //private Task<Uri> photoUri;
+
     public FriendlyMessage() {
     }
 
@@ -29,6 +31,12 @@ public class FriendlyMessage {
         this.name = name;
         this.photoUrl = photoUrl;
     }
+
+   /* public FriendlyMessage(String text, String name, Task<Uri> downloadUrl) {
+        this.text = text;
+        this.name = name;
+        this.photoUrl = downloadUrl.toString();
+    }*/
 
     public String getText() {
         return text;

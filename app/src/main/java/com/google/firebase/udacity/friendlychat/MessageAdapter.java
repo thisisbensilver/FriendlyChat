@@ -23,19 +23,31 @@ public class MessageAdapter extends ArrayAdapter<FriendlyMessage> {
             convertView = ((Activity) getContext()).getLayoutInflater().inflate(R.layout.item_message, parent, false);
         }
 
-        ImageView photoImageView = (ImageView) convertView.findViewById(R.id.photoImageView);
-        TextView messageTextView = (TextView) convertView.findViewById(R.id.messageTextView);
-        TextView authorTextView = (TextView) convertView.findViewById(R.id.nameTextView);
+        ImageView photoImageView = convertView.findViewById(R.id.photoImageView);
+        TextView messageTextView = convertView.findViewById(R.id.messageTextView);
+        TextView authorTextView = convertView.findViewById(R.id.nameTextView);
+
+        String q = "";
 
         FriendlyMessage message = getItem(position);
 
+        q = "hjhl:";
+
         boolean isPhoto = message.getPhotoUrl() != null;
+
+        q = "ghjkljhgffghj";
+
         if (isPhoto) {
             messageTextView.setVisibility(View.GONE);
             photoImageView.setVisibility(View.VISIBLE);
-            Glide.with(photoImageView.getContext())
-                    .load(message.getPhotoUrl())
-                    .into(photoImageView);
+            //photoImageView.setImageResource();
+            String a = "";
+            String b = "";
+
+
+            Glide.with(photoImageView.getContext()).load(message.getPhotoUrl()).into(photoImageView);
+
+            String c = "";
         } else {
             messageTextView.setVisibility(View.VISIBLE);
             photoImageView.setVisibility(View.GONE);
